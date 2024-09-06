@@ -1,0 +1,63 @@
+// Initialize Resources and Requests
+
+//let availableResources = [...];  // Array of available resources
+//3 resourceRequests = [...];    // Array of resource requests (from different users or processes)
+
+// Function to allocate resources dynamically
+function allocateResources() {
+    // Sort resource requests by priority or need (optional)
+    resourceRequests.sort(byPriority); // byPriority can be a custom sorting function
+
+    // Loop through each request
+    for (let i = 0; i < resourceRequests.length; i++) {
+        let request = resourceRequests[i];
+        
+        // Check if enough resources are available for the current request
+        if (checkResourceAvailability(request)) {
+            // Allocate resources to the request
+            allocate(request);
+        } else {
+            // Handle resource allocation failure (e.g., queue or reject request)
+            handleFailedAllocation(request);
+        }
+    }
+}
+
+// Helper function to check if resources are available
+function checkResourceAvailability(request) {
+    // Logic to check if enough resources are available for the request
+    // Example: compare available resources with the requested resources
+    if (request.requiredResources <= availableResources) {
+        return true;
+    }
+    return false;
+}
+
+// Helper function to allocate resources
+function allocate(request) {
+    // Logic to allocate resources
+    // Update available resources after allocation
+    availableResources -= request.requiredResources;
+    console.log(`Allocated ${request.requiredResources} resources to request ${request.id}`);
+}
+
+// Handle failed resource allocation
+function handleFailedAllocation(request) {
+    // Logic to handle cases where resources cannot be allocated
+    // Example: Add the request to a waiting queue or reject it
+    console.log(`Request ${request.id} could not be fulfilled due to insufficient resources.`);
+}
+
+// Function to release resources when a process is done
+function releaseResources(freedResources) {
+    availableResources += freedResources;
+    console.log(`${freedResources} resources released and added back to available pool.`);
+}
+
+// Example function to determine priority (optional)
+function byPriority(a, b) {
+    return a.priority - b.priority; // Sort in ascending order of priority
+}
+
+// Main Program Execution
+allocateResources();  // Call the allocation function
