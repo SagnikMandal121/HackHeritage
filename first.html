@@ -1,0 +1,142 @@
+<style>
+    .load-intermediate {
+      background-color: #fff;
+      display: flex;
+      padding: 0 0 141px;
+      flex-direction: column;
+      overflow: hidden;
+      color: rgba(99, 97, 97, 0.79);
+      font: 800 25px Poppins, sans-serif;
+    }
+    
+    .header-bar {
+      background-color: #0049ff;
+      min-height: 57px;
+      width: 100%;
+    }
+    
+    .content-wrapper {
+      border-radius: 60px;
+      background-color: rgba(93, 165, 251, 0.45);
+      align-self: center;
+      display: flex;
+      margin-top: 84px;
+      width: 904px;
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 98px 80px 48px;
+      
+    }
+    
+    .form-container {
+      display: flex;
+      width: 701px;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    
+    .select-field {
+      border-radius: 30px;
+      background-color: #fff;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 21px 41px;
+      margin-top: 70px;
+    }
+    
+    .select-field:first-child {
+      margin-top: 0;
+    }
+    
+    .select-label {
+      margin: auto 0;
+    }
+    
+    .dropdown-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 41px;
+    }
+    
+    .calculate-button {
+      border-radius: 30px;
+      background-color: #0049ff;
+      align-self: center;
+      margin-top: 70px;
+      width: 295px;
+      max-width: 100%;
+      color: #fff;
+      text-align: center;
+      padding: 34px 52px;
+      border: none;
+      cursor: pointer;
+      font: inherit;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .load-intermediate {
+        padding-bottom: 100px;
+      }
+    
+      .content-wrapper {
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    
+      .select-field {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    
+      .calculate-button {
+        margin-top: 40px;
+        padding: 20px;
+      }
+    }
+    </style>
+    <section class="load-intermediate">
+      <header class="header-bar"></header>
+      <main class="content-wrapper">
+        <form class="form-container">
+          <div class="select-field">
+            <label for="district-select" class="select-label">Select Subdivision:</label>
+            <select id="district-select" name="Subdivision" aria-label="Select Subdivision">
+              <option value="">Choose a Subdivision</option>
+            </select>
+            <img src="file:///C:/Users/Sagnik%20Mandal/Desktop/trash/assets/vectors/vector_1_x2.svg" alt="" class="dropdown-icon" aria-hidden="true" />
+          </div>
+          <div class="select-field">
+            <label for="village-town-select" class="select-label">Select Village/Town:</label>
+            <select id="village-town-select" name="village-town" aria-label="Select Village or Town">
+              <option value="">Choose a village or town</option>
+            </select>
+            <img src="file:///C:/Users/Sagnik%20Mandal/Desktop/trash/assets/vectors/vector_1_x2.svg" alt="" class="dropdown-icon" aria-hidden="true" />
+          </div>
+          <div class="select-field">
+            <label for="block-ward-select" class="select-label">Select Block/Ward:</label>
+            <select id="block-ward-select" name="block-ward" aria-label="Select Block or Ward">
+              <option value="">Choose a block or ward</option>
+            </select>
+            <img src="file:///C:/Users/Sagnik%20Mandal/Desktop/trash/assets/vectors/vector_1_x2.svg" alt="" class="dropdown-icon" aria-hidden="true" />
+          </div>
+          <button type="submit" class="calculate-button">Calculate Load</button>
+        </form>
+      </main>
+    </section>

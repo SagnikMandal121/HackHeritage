@@ -1,0 +1,499 @@
+<style>
+    .revenue-department {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .top-bar {
+      background-color: #0049ff;
+      min-height: 57px;
+      width: 100%;
+    }
+    
+    .header {
+      display: flex;
+      gap: 16px;
+      font-family: Inter, sans-serif;
+      color: #000;
+      font-weight: 800;
+      flex-wrap: wrap;
+      margin: 14px 0 0 106px;
+    }
+    
+    .logo {
+      aspect-ratio: 0.59;
+      object-fit: contain;
+      width: 43px;
+    }
+    
+    .department-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 0;
+      margin: auto 0;
+    }
+    
+    .department-name {
+      font-size: 32px;
+    }
+    
+    .government-name {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+    
+    .navigation-bar {
+      background-color: #0049ff;
+      display: flex;
+      margin-top: 24px;
+      width: 100%;
+      gap: 20px;
+      font-size: 32px;
+      font-weight: 600;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 11px 66px;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px 55px;
+      font-family: Inter, sans-serif;
+      color: #fff;
+      flex-wrap: wrap;
+      margin: auto 0;
+    }
+    
+    .nav-item {
+      z-index: 10;
+      align-self: stretch;
+      white-space: nowrap;
+      margin: auto 0;
+      padding: 7px 2px 0;
+      text-decoration:none ;
+      color: #fff;
+    }
+    
+    .dropdown-icon {
+      aspect-ratio: 1.58;
+      object-fit: contain;
+      width: 30px;
+      margin: auto 0;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      align-items: start;
+      gap: 25px 40px;
+      font-family: Poppins, sans-serif;
+      color: #000;
+      text-align: center;
+    }
+    
+    .auth-button {
+      background-color: #ffc404;
+      padding: 5px 21px;
+    }
+    
+    .hero-section {
+      background-color: rgba(93, 165, 251, 0.45);
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 131px 70px;
+    }
+    
+    .hero-content {
+      border-radius: 60px;
+      background-color: #fff;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+      margin-bottom: -30px;
+      width: 1300px;
+      max-width: 100%;
+      padding: 60px 7px 60px 42px;
+    }
+    
+    .hero-flex {
+      gap: 20px;
+      display: flex;
+    }
+    
+    .hero-text {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      font-family: Poppins, sans-serif;
+      color: #000;
+    }
+    
+    .hero-title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+    
+    .hero-description {
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 39px;
+    }
+    
+    .hero-image {
+      aspect-ratio: 2.23;
+      object-fit: contain;
+      width: 100%;
+      border-radius: 16px;
+      align-self: stretch;
+      margin: auto 0;
+    }
+    
+    .services-section {
+      background-color: rgba(255, 255, 255, 0.45);
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 129px 80px;
+    }
+    
+    .services-content {
+      border-radius: 60px;
+      background-color: #0049ff;
+      display: flex;
+      margin-bottom: -28px;
+      width: 100%;
+      max-width: 1300px;
+      flex-direction: column;
+      align-items: center;
+      padding: 29px 80px 79px;
+    }
+    
+    .services-title {
+      color: #fff;
+      text-align: center;
+      align-self: center;
+      font: 600 85px Poppins, sans-serif;
+    }
+    
+    .services-grid {
+      gap: 20px;
+      display: flex;
+    }
+    
+    .service-card {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      color: #000;
+      white-space: nowrap;
+      text-align: center;
+      font: 600 24px Poppins, sans-serif;
+    }
+    
+    .service-icon-wrapper {
+      border-radius: 60px;
+      background-color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 58px 41px;
+    }
+    
+    .service-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 81px;
+    }
+    
+    .service-name {
+      margin-top: 25px;
+      margin-bottom: 1px;
+    }
+    .alloc{
+        margin-top:1px ;
+    }
+    
+    .footer-section {
+      background-color: rgba(93, 165, 251, 0.45);
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      padding: 119px 70px;
+    }
+    
+    .footer-content {
+      margin-bottom: -24px;
+      width: 704px;
+      max-width: 100%;
+    }
+    
+    .footer-flex {
+      gap: 20px;
+      display: flex;
+    }
+    
+    .quick-links {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      align-items: start;
+      color: #000;
+      font: 600 25px Poppins, sans-serif;
+    }
+    
+    .quick-links-title {
+      font-size: 64px;
+      font-weight: 800;
+      align-self: stretch;
+    }
+    
+    .link-item {
+      margin-top: 30px;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .top-bar {
+        max-width: 100%;
+      }
+    
+      .department-info {
+        max-width: 100%;
+      }
+    
+      .department-name {
+        max-width: 100%;
+        margin-bottom: 1px;
+      }
+    
+      .navigation-bar {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .nav-links {
+        max-width: 100%;
+      }
+    
+      .nav-item {
+        white-space: initial;
+      }
+    
+      .auth-button {
+        padding: 5px 20px;
+      }
+    
+      .hero-section {
+        max-width: 100%;
+        padding: 100px 20px;
+      }
+    
+      .hero-content {
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 0 20px;
+      }
+    
+      .hero-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    
+      .hero-text {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    
+      .hero-description {
+        max-width: 100%;
+      }
+    
+      .hero-image {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    
+      .services-section {
+        max-width: 100%;
+        padding: 100px 20px;
+      }
+    
+      .services-content {
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 0 20px;
+      }
+    
+      .services-title {
+        max-width: 100%;
+        font-size: 40px;
+      }
+    
+      .services-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    
+      .service-card {
+        margin-top: 27px;
+        white-space: initial;
+      }
+    
+      .service-icon-wrapper {
+        padding: 0 20px;
+      }
+    
+      .footer-section {
+        max-width: 100%;
+        padding: 100px 20px;
+      }
+    
+      .footer-content {
+        margin-bottom: 10px;
+      }
+    
+      .footer-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    
+      .quick-links {
+        margin-top: 40px;
+      }
+    
+      .quick-links-title {
+        font-size: 40px;
+      }
+    }
+    </style>
+    
+    <section class="revenue-department">
+      <header class="top-bar"></header>
+      <div class="header">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb15d80a76e49b601bcad13b321488eebdab14662162a7c984f24b095505f13a?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="Department of Revenue Logo" class="logo" />
+        <div class="department-info">
+          <h1 class="department-name">DEPARTMENT OF REVENUE</h1>
+          <p class="government-name">GOVT.OF NCT OF DELHI</p>
+        </div>
+      </div>
+      <nav class="navigation-bar">
+        <ul class="nav-links">
+          <li><a href="#" class="nav-item">Home</a></li>
+          <li>
+            <a href="#" class="nav-item">About Us</a>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/310bc65086ea202220ba94f5469f59cddf8d428a5d22710f23df012bfbe5df1b?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="" class="dropdown-icon" />
+          </li>
+          <li>
+            <a href="#" class="nav-item">Services</a>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/310bc65086ea202220ba94f5469f59cddf8d428a5d22710f23df012bfbe5df1b?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="" class="dropdown-icon" />
+          </li>
+          <li>
+            <a href="#" class="nav-item">
+              Others
+            </a>
+          </li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="#" class="auth-button">Sign Up</a>
+          <a href="#" class="auth-button">Login</a>
+        </div>
+      </nav>
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-flex">
+            <div class="hero-text">
+              <h2 class="hero-title">
+                <span style="color: #0049ff;">Welcome to</span>
+                <br />
+                <span style="color: #ffc404;">Department of Revenue</span>
+              </h2>
+              <p class="hero-description">
+                Delhi is divided in Eleven Revenue District. Each district is headed by a Deputy Commissioner, who has under him an Additional District Magistrate, Sub Divisional Magistrates, Tehsildars and Sub-Registrar. The District Administration carries out diverse variety of functions including magisterial matters, revenue courts, issue of various statutory documents, registration of property, conduct of elections, relief & rehabilitations, land acquisition and various other areas which are too numerous to be numerated.
+              </p>
+            </div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/04aa7269181f23baec634ffcf8ecccaf86754544d961c689e31400d45209a6dc?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="Revenue Department Overview" class="hero-image" />
+          </div>
+        </div>
+      </section>
+      <section class="services-section">
+        <div class="services-content">
+          <h2 class="services-title">OUR SERVICES</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/19c66433f8b05864fc1c43586d687f5633a1c94fe1fb107b7756fd43d5cde98d?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="" class="service-icon" />
+                <a href="C:\Users\Sagnik Mandal\Desktop\trash\first.html" class="service-name">Load</a>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/46cb4ffda719d8bbb7760d0b30398344df41a9e274497d88576f65d2fb998042?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="" class="service-icon" />
+                <p class="service-name">Deficient</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/806d160ab55a4eb8305403d1f129a4c5094b330a45e67726cd96266fc5a75667?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="" class="service-icon" />
+                <p class="service-name">Excess</p>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-icon-wrapper">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a2d480a0bd1093ee10201bf12ee90f1925830b9126ad4e5ba502b1af6bf9193d?placeholderIfAbsent=true&apiKey=97d2bcb635304be0b8a3cd1a5526b838" alt="" class="service-icon" />
+                <p class="service-name">Automated </p>
+                <p class="alloc">Allocation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer-section">
+        <div class="footer-content">
+          <div class="footer-flex">
+            <nav class="quick-links">
+              <h2 class="quick-links-title">Quick Links</h2>
+              <ul>
+                <li><a href="#" class="link-item">Accessibility Statement</a></li>
+                <li><a href="#" class="link-item">Disclaimer</a></li>
+                <li><a href="#" class="link-item">Feedback</a></li>
+                <li><a href="#" class="link-item">Privacy Policy</a></li>
+                <li><a href="#" class="link-item">Term of use</a></li>
+                <li><a href="#" class="link-item">Help</a></li>
+              </ul>
+            </nav>
+            <nav class="quick-links">
+              <ul>
+                <li><a href="#" class="link-item">Copyright Policy</a></li>
+                <li><a href="#" class="link-item">Security Policy</a></li>
+                <li><a href="#" class="link-item">Hyperlink Policy</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </section>
